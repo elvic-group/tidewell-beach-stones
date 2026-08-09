@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidewell — Beach Stones</title>
+<meta name="description" content="Hand-picked beach stones for décor, gardens, meditation and craft. Ethically gathered, tumbled smooth by the sea.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#">Tidewell<span>.</span></a>
+  <nav>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-btn" id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Gathered by hand · Shaped by the sea</p>
+    <h1>Beach stones with a thousand years of patience in them.</h1>
+    <p class="lede">Smooth, cool, quietly beautiful. Sorted by size and colour for décor, gardens, aquariums, craft and calm.</p>
+    <a class="btn" href="#shop">Browse the collection</a>
+  </div>
+</section>
+
+<section class="trust">
+  <div>Free shipping over $75</div>
+  <div>Sustainably gathered</div>
+  <div>Washed &amp; sorted by hand</div>
+  <div>30-day returns</div>
+</section>
+
+<main id="shop" class="wrap">
+  <h2>The collection</h2>
+  <p class="sub">Sold by weight. Every stone is one of a kind, so shapes and shades vary.</p>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section id="about" class="wrap band">
+  <h2>About Tidewell</h2>
+  <p>We walk cold northern shorelines at low tide and pick up what the water has already finished working on. Nothing is quarried, blasted or machine-tumbled. Stones are rinsed in fresh water, air dried, sorted by hand, and sent out in recycled packaging.</p>
+  <p>We gather only where local collecting is permitted, and we take a little from many beaches rather than a lot from one.</p>
+</section>
+
+<section id="faq" class="wrap">
+  <h2>Questions</h2>
+  <details><summary>How much is a kilo of stones?</summary><p>Roughly a large handful to two handfuls, depending on stone size. Pebble grades give many more pieces per kilo than the large flats.</p></details>
+  <details><summary>Are they aquarium safe?</summary><p>Our basalt and granite grades are inert and aquarium safe. Rinse before use. Avoid the chalk-white grade in soft-water tanks.</p></details>
+  <details><summary>Will my stones look like the photos?</summary><p>Close, but not identical. Natural stone varies in colour and shape — that's the point of it.</p></details>
+  <details><summary>Do they stay shiny?</summary><p>Wet stones look darker and glossier. Dry, they go matte. A drop of mineral oil brings the colour back if you want it.</p></details>
+</section>
+
+<section id="contact" class="wrap band">
+  <h2>Get in touch</h2>
+  <form class="contact" onsubmit="event.preventDefault(); this.reset(); alert('Thanks — we\'ll be in touch.');">
+    <input type="text" placeholder="Your name" required>
+    <input type="email" placeholder="Email address" required>
+    <textarea rows="4" placeholder="How can we help?" required></textarea>
+    <button class="btn" type="submit">Send message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Tidewell Beach Stones. Demo storefront — no real orders are processed.</p>
+</footer>
+
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>Your cart</h3>
+    <button id="closeCart" aria-label="Close cart">×</button>
+  </div>
+  <div id="cartItems" class="drawer-body"><p class="empty">Your cart is empty.</p></div>
+  <div class="drawer-foot">
+    <div class="total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+    <button class="btn full" onclick="alert('This is a demo storefront — checkout is not connected.')">Checkout</button>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
