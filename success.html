@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order received — Tidewell</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">Tidewell<span>.</span></a>
+  <nav>
+    <a href="/#shop">Shop</a>
+    <a href="/#about">About</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Order received</p>
+    <h1>Thank you — your stones are on their way.</h1>
+    <p class="lede">We've sent a confirmation to your email. Orders are picked, rinsed and packed by hand, so allow a couple of days before dispatch.</p>
+    <a class="btn" href="/#shop">Back to the collection</a>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>What happens now</h2>
+  <details open><summary>Packing</summary><p>Your stones are weighed out, rinsed in fresh water and air dried before they go in the box. Everything ships in recycled packaging.</p></details>
+  <details><summary>Large Hand Stones</summary><p>If you ordered individual hand stones, we'll email you a photograph of the actual stone before it ships. You can say no and we'll pick another.</p></details>
+  <details><summary>Questions</summary><p>Reply to your confirmation email and it comes straight to us.</p></details>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Tidewell Beach Stones.</p>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

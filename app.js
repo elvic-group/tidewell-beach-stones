@@ -251,5 +251,46 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape'){ closeModal(); openCart(false); }
 });
 
+/* ---------- checkout ---------- */
+const checkoutBtn  = document.getElementById('checkoutBtn');
+const checkoutNote = document.getElementById('checkoutNote');
+
+function note(msg, isError){
+  checkoutNote.textContent = msg || '';
+  checkoutNote.classList.toggle('error', !!isError);
+}
+
+checkoutBtn.onclick = async () => {
+  if (!cart.size){ note('Your cart is empty.', true); return; }
+
+  const items = [...cart].map(([id, qty]) => ({ id, qty }));
+
+  checkoutBtn.disabled = true;
+  const label = checkoutBtn.textContent;
+  checkoutBtn.textContent = 'Starting checkout…';
+  note('');
+
+  try {
+    const res  = await fetch('/api/checkout', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ items })
+    });
+
+    let data = {};
+    try { data = await res.json(); } catch { /* non-JSON error page */ }
+
+    if (!res.ok || !data.url){
+      throw new Error(data.error || `Checkout unavailable (${res.status}).`);
+    }
+    window.location.href = data.url;          // hand off to Stripe
+    return;                                    // keep button disabled during nav
+  } catch (err){
+    note(err.message || 'Could not reach checkout. Please try again.', true);
+    checkoutBtn.disabled = false;
+    checkoutBtn.textContent = label;
+  }
+};
+
 document.getElementById('year').textContent = new Date().getFullYear();
 render();

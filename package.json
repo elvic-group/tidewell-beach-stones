@@ -1,0 +1,9 @@
+{
+  "name": "tidewell-beach-stones",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tidewell — beach stone storefront with Stripe Checkout",
+  "dependencies": {
+    "stripe": "^17.5.0"
+  }
+}
